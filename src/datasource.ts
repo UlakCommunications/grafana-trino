@@ -7,7 +7,7 @@ import { catchError, mapTo } from 'rxjs/operators';
 import { encode } from 'hi-base32';
 import { map } from 'lodash';
 
-export const quickwitRegex = /quickwit\..*?"([\s\S]*?)" as/g;
+export const quickwitRegex = /from\s+.*?"([\s\S]*?)"\s+as/g;
 export const base32Regex = /^[A-Z2-7]+=*$/;
 
 function encodeQuickwitQuery(query?: string): string | undefined {
