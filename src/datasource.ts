@@ -6,12 +6,13 @@ import { lastValueFrom, of } from 'rxjs';
 import { catchError, mapTo } from 'rxjs/operators';
 import { encode } from 'hi-base32';
 import { map } from 'lodash';
+import nunjucks from 'nunjucks';
 
 export const quickwitRegex = /from\s+(?:\w+\.)+?"([\s\S]*?)"\s+as/g;
 export const base32Regex = /^[A-Z2-7]+=*$/;
 
-function encodeQuickwitQuery(query?: string): string | undefined {
-  return query?.replace(quickwitRegex, (match, plain) => {
+function encodeQuickwitQuery(rawSQL: string): string {
+  return rawSQL.replace(quickwitRegex, (match, plain) => {
     if (plain.length % 8 === 0 && base32Regex.exec(plain)) {
       return match;
     }
@@ -65,9 +66,10 @@ export class DataSource extends DataSourceWithBackend<TrinoQuery, TrinoDataSourc
   }
 
   applyTemplateVariables(query: TrinoQuery, scopedVars: ScopedVars): Record<string, any> {
-    query.rawSQL = getTemplateSrv().replace(query.rawSQL, scopedVars, this.interpolateQueryStr);
-    query.rawSQL = encodeQuickwitQuery(query.rawSQL);
-    return query;
+    let newQuery = { ...query };
+    newQuery.rawSQL = getTemplateSrv().replace(newQuery.rawSQL, scopedVars, this.interpolateQueryStr);
+    newQuery.rawSQL = encodeQuickwitQuery(nunjucks.renderString(newQuery.rawSQL, {}));
+    return newQuery;
   }
 
   interpolateQueryStr(value: any, variable: { multi: any; includeAll: any }, defaultFormatFn: any) {
