@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.10
+
+* Store access token securely
+* Update dependencies
+
+## 1.0.9
+
+* Add support for access token (JWT) authentication
+
+## 1.0.8
+
+* Add support for OAuth
+* Add support for annotations
+* Use UTC timestamps in macroTimeFilter
+
 ## 1.0.7
 
 * Add support for user impersonation

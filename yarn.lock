@@ -1403,13 +1403,13 @@
     "@grafana/async-query-data" "0.1.4"
     "@grafana/experimental" "1.1.0"
 
-"@grafana/data@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-9.5.2.tgz#983042208a61c3a321499da7837fdd2ecbe7a04c"
-  integrity sha512-L5lXzwPfG1Zu04slMLVqwETykYoWfJFqB7HqeqHWRtUD4YW7NlsyNXnSI7/d0GnbPGNWjejWFxjss3jq4Beq5Q==
+"@grafana/data@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-9.5.21.tgz#f841bdff9a8b1df479ca30fb007a20ea9f3f6c07"
+  integrity sha512-P7H+7wh7Yjwa5n0JyZl4m/q1ZftqHtyDlhiWYkYsFAK9nIENDgk0IQT59XmRMUAUbZFr2Ic9QKGXKXQCLB+6fg==
   dependencies:
     "@braintree/sanitize-url" "6.0.2"
-    "@grafana/schema" "9.5.2"
+    "@grafana/schema" "9.5.21"
     "@types/d3-interpolate" "^3.0.0"
     d3-interpolate "3.0.1"
     date-fns "2.29.3"
@@ -1431,10 +1431,10 @@
     uplot "1.6.24"
     xss "^1.0.14"
 
-"@grafana/e2e-selectors@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/e2e-selectors/-/e2e-selectors-9.5.2.tgz#8d56e0c11d7dfb85e0b9a908397abb58cfbc2325"
-  integrity sha512-SXBFbRMsRRRSnHbIiJZJsepTHDgOf885VuHMrtkjLiYTLAU5Rg/Ywy0I270qhAPtyWXpiDXTGlqCEQoJF3P3IQ==
+"@grafana/e2e-selectors@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/e2e-selectors/-/e2e-selectors-9.5.21.tgz#625795cc74489830b490f934d65d0c4ce1700586"
+  integrity sha512-TqcQa+lBsNdNu8BzF3STzWdG9OM8iMkbBhOQecCobbHCRHLttABe8LYFqEyKdxqpg3d7cDfknzkfZy+npuhs0A==
   dependencies:
     "@grafana/tsconfig" "^1.2.0-rc1"
     tslib "2.5.0"
@@ -1480,15 +1480,15 @@
     ua-parser-js "^1.0.32"
     web-vitals "^3.1.1"
 
-"@grafana/runtime@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/runtime/-/runtime-9.5.2.tgz#c7e8ae782348f1fe6680a9c82981ebc16f4205e1"
-  integrity sha512-QwmhMtwDvSw04e695NPtOeKTmmIjpxNZFO4tTSs82ViiqMcNicWY9XD90k36jwxTI4Rr3o/4KFYcKJP3AzeRag==
+"@grafana/runtime@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/runtime/-/runtime-9.5.21.tgz#3ecc7c927bfd799f3bb4555a2c70234972a5827c"
+  integrity sha512-NHRfTLtQ0LPI/SdUMmVo1ansDRztNxzeyj6OAlNtASC3nXkKc1j891z7SYDyJQMC3VJR/DlkifNX1HcydalUWg==
   dependencies:
-    "@grafana/data" "9.5.2"
-    "@grafana/e2e-selectors" "9.5.2"
+    "@grafana/data" "9.5.21"
+    "@grafana/e2e-selectors" "9.5.21"
     "@grafana/faro-web-sdk" "1.0.2"
-    "@grafana/ui" "9.5.2"
+    "@grafana/ui" "9.5.21"
     "@sentry/browser" "6.19.7"
     history "4.10.1"
     lodash "4.17.21"
@@ -1496,17 +1496,17 @@
     systemjs "0.20.19"
     tslib "2.5.0"
 
-"@grafana/schema@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/schema/-/schema-9.5.2.tgz#336587ceb9cb1391b3d07d9e0372a7812cb7b215"
-  integrity sha512-EbJLpdS4Zt7e8p40DVWOdGrTz0M8LRrCHGuHZnpz7xcFmwWTwu5bh/i1n4i98QYmF5cD+oAcRaHqRqT15HYORw==
+"@grafana/schema@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/schema/-/schema-9.5.21.tgz#f51c414a729c89bcabf116038fbe4a53bea42d30"
+  integrity sha512-UkNS1X3ofi079SWyeogypFPRNnP+1iU6rNk/zluITUicqREDP8wI9LbpUwHSWjgSuRZlZekcc4V7SdNhmjFIwA==
   dependencies:
     tslib "2.5.0"
 
-"@grafana/toolkit@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-9.5.2.tgz#39f58b32050bbc7ca6860e1ebfe7378f68a0abca"
-  integrity sha512-nff48hP6T0l6uSgGSDzf/SUdrokvOjvKGb0rUR0MNEvdFXwT+3Zvv+VQd4Ou5DYk1jFFQ4FIy6X94X1VXXJ/iw==
+"@grafana/toolkit@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-9.5.21.tgz#bac0d8b19f3335e89d7f7f0a164edc1755108fe4"
+  integrity sha512-nHObvShJy564A9iE5kFN/uqG3roZRZx/efcQrOK8iVDngCHUBZVHrqLo2BKoZHQaaNouzKlMEsDweI7WAOJQ1g==
   dependencies:
     "@babel/core" "7.18.9"
     "@babel/plugin-proposal-class-properties" "7.18.6"
@@ -1520,10 +1520,10 @@
     "@babel/preset-env" "7.18.9"
     "@babel/preset-react" "7.18.6"
     "@babel/preset-typescript" "7.18.6"
-    "@grafana/data" "9.5.2"
+    "@grafana/data" "9.5.21"
     "@grafana/eslint-config" "5.1.0"
     "@grafana/tsconfig" "^1.2.0-rc1"
-    "@grafana/ui" "9.5.2"
+    "@grafana/ui" "9.5.21"
     "@jest/core" "27.5.1"
     "@types/command-exists" "^1.2.0"
     "@types/eslint" "8.4.1"
@@ -1598,17 +1598,17 @@
   resolved "https://registry.yarnpkg.com/@grafana/tsconfig/-/tsconfig-1.2.0-rc1.tgz#10973c978ec95b0ea637511254b5f478bce04de7"
   integrity sha512-+SgQeBQ1pT6D/E3/dEdADqTrlgdIGuexUZ8EU+8KxQFKUeFeU7/3z/ayI2q/wpJ/Kr6WxBBNlrST6aOKia19Ag==
 
-"@grafana/ui@9.5.2":
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-9.5.2.tgz#ea535b1f32486b7ce7bf7233ae3e16f6fb9224d2"
-  integrity sha512-wI8CiKjAH4I7sQEvI4HB12/k7sHFI5WXwnx8WPPIarF///i+e+D/7gzEeoVOFz6UlRPgO8jFxnJ8ePN1C/DF0Q==
+"@grafana/ui@9.5.21":
+  version "9.5.21"
+  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-9.5.21.tgz#0f3b41b0930a7fdcefecaec0b2a2da25f3964eaf"
+  integrity sha512-Gb1TdCjkwhWPwqNrVAIhGzxH+4mzbBDcqY22k0JWHW7rNDhQNjVwCTORsTi1eA7Ogp5apq3hX0oJJt3n+f0WNA==
   dependencies:
     "@emotion/css" "11.10.6"
     "@emotion/react" "11.10.6"
-    "@grafana/data" "9.5.2"
-    "@grafana/e2e-selectors" "9.5.2"
+    "@grafana/data" "9.5.21"
+    "@grafana/e2e-selectors" "9.5.21"
     "@grafana/faro-web-sdk" "1.0.2"
-    "@grafana/schema" "9.5.2"
+    "@grafana/schema" "9.5.21"
     "@leeoniya/ufuzzy" "1.0.6"
     "@monaco-editor/react" "4.4.6"
     "@popperjs/core" "2.11.6"
@@ -2118,6 +2118,16 @@
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@petamoriken/float16/-/float16-3.7.1.tgz#4a0cc0854a3a101cc2d697272f120e1a05975ce5"
   integrity sha512-oXZOc+aePd0FnhTWk15pyqK+Do87n0TyLV1nxdEougE95X/WXWDqmQobfhgnSY7QsWn5euZUWuDVeTQvoQ5VNw==
+
+"@playwright/test@1.33.0":
+  version "1.33.0"
+  resolved "https://registry.yarnpkg.com/@playwright/test/-/test-1.33.0.tgz#669ef859efb81b143dfc624eef99d1dd92a81b67"
+  integrity sha512-YunBa2mE7Hq4CfPkGzQRK916a4tuZoVx/EpLjeWlTVOnD4S2+fdaQZE0LJkbfhN5FTSKNLdcl7MoT5XB37bTkg==
+  dependencies:
+    "@types/node" "*"
+    playwright-core "1.33.0"
+  optionalDependencies:
+    fsevents "2.3.2"
 
 "@popperjs/core@2.11.6", "@popperjs/core@^2.11.5":
   version "2.11.6"
@@ -2797,6 +2807,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.26.tgz#63d204d136c9916fb4dcd1b50f9740fe86884e47"
   integrity sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==
 
+"@types/nunjucks@^3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.2.6.tgz#6d6e0363719545df8b9a024279902edf68b2caa9"
+  integrity sha512-pHiGtf83na1nCzliuAdq8GowYiXvH5l931xZ0YEHaLMNFgynpEqx+IPStlu7UaDkehfvl01e4x/9Tpwhy7Ue3w==
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -3288,6 +3303,11 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+a-sync-waterfall@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz#75b6b6aa72598b497a125e7a2770f14f4c8a1fa7"
+  integrity sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==
+
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.6.tgz#41b80f2c871d19686216b82309231cfd3cb3d291"
@@ -3487,6 +3507,11 @@ array.prototype.flatmap@^1.2.5, array.prototype.flatmap@^1.3.0:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
     es-shim-unscopables "^1.0.0"
+
+asap@^2.0.3:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
+  integrity sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -3962,6 +3987,11 @@ commander@^2.20.0, commander@^2.20.3:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+
+commander@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
+  integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
 commander@^8.3.0:
   version "8.3.0"
@@ -5482,7 +5512,7 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
-fsevents@^2.3.2, fsevents@~2.3.2:
+fsevents@2.3.2, fsevents@^2.3.2, fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
@@ -7351,6 +7381,15 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
+nunjucks@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.2.4.tgz#f0878eef528ce7b0aa35d67cc6898635fd74649e"
+  integrity sha512-26XRV6BhkgK0VOxfbU5cQI+ICFUtMLixv1noZn1tGU38kQH5A5nmmbk/O45xdyBhD1esk47nKrY0mvQpZIhRjQ==
+  dependencies:
+    a-sync-waterfall "^1.0.0"
+    asap "^2.0.3"
+    commander "^5.1.0"
+
 nwsapi@^2.2.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.2.tgz#e5418863e7905df67d51ec95938d67bf801f0bb0"
@@ -7698,6 +7737,11 @@ pkg-up@^3.1.0:
   integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   dependencies:
     find-up "^3.0.0"
+
+playwright-core@1.33.0:
+  version "1.33.0"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.33.0.tgz#269efe29a927cd6d144d05f3c2d2f72bd72447a1"
+  integrity sha512-aizyPE1Cj62vAECdph1iaMILpT0WUDCq3E6rW6I+dleSbBoGbktvJtzS6VHkZ4DKNEOG9qJpiom/ZxO+S15LAw==
 
 pngjs@^6.0.0:
   version "6.0.0"
