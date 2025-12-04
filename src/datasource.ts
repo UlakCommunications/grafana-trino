@@ -68,7 +68,7 @@ export class DataSource extends DataSourceWithBackend<TrinoQuery, TrinoDataSourc
   applyTemplateVariables(query: TrinoQuery, scopedVars: ScopedVars) {
     return {
       ...query,
-      rawSQL: getTemplateSrv().replace(encodeQuickwitQuery(nunjucks.renderString(query.rawSQL, {})), scopedVars, this.interpolateQueryStr),
+      rawSQL: encodeQuickwitQuery(nunjucks.renderString(getTemplateSrv().replace(query.rawSQL ?? "", scopedVars, this.interpolateQueryStr), {})),
     };
   }
 
