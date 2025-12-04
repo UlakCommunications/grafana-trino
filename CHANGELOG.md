@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.0.12
+
+* Add support for OAuth2 client-credentials flow
+
+## 1.0.11
+
+* Don't overwrite Grafana variables when editing existing dashboard queries
+* Don't cancel queries running for longer than 60 seconds
+
+## 1.0.10
+
+* Store access token securely
+* Update dependencies
+
+## 1.0.9
+
+* Add support for access token (JWT) authentication
+
+## 1.0.8
+
+* Add support for OAuth
+* Add support for annotations
+* Use UTC timestamps in macroTimeFilter
+
 ## 1.0.10
 
 * Store access token securely

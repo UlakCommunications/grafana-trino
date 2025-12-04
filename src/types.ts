@@ -48,10 +48,15 @@ ORDER BY
 
 export interface TrinoSecureJsonData {
   accessToken?: string;
+  clientSecret?: string;
 }
 
 export interface TrinoDataSourceOptions extends DataSourceJsonData {
   enableImpersonation?: boolean;
+  tokenUrl?: string;
+  clientId?: string;
+  impersonationUser?: string;
+  clientTags?: string;
 }
 /**
  * Value that is used in the backend, but never sent over HTTP to the frontend

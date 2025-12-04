@@ -7,14 +7,15 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v4.3.0
         with:
           node-version: "14.x"
           cache: 'yarn'
@@ -25,30 +26,80 @@ jobs:
       - name: Build and test frontend
         run: yarn build
 
-      - name: Check for backend
-        id: check-for-backend
-        run: |
-          if [ -f "Magefile.go" ]
-          then
-            echo "::set-output name=has-backend::true"
-          fi
-
       - name: Setup Go environment
-        if: steps.check-for-backend.outputs.has-backend == 'true'
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
-          go-version: "1.20"
+          go-version: "1.22"
 
       - name: Test backend
-        if: steps.check-for-backend.outputs.has-backend == 'true'
-        uses: magefile/mage-action@v2
+        uses: magefile/mage-action@v3
         with:
           version: latest
           args: coverage
 
       - name: Build backend
-        if: steps.check-for-backend.outputs.has-backend == 'true'
-        uses: magefile/mage-action@v2
+        uses: magefile/mage-action@v3
         with:
           version: latest
           args: buildAll
+
+      - name: Setup services (Trino, Grafana, PostgreSQL, Keycloak)
+        run: |
+          docker network create trino
+
+          echo "Starting PostgreSQL..."
+          docker run --rm --detach \
+            --name postgres \
+            --net trino \
+            --env POSTGRES_USER=keycloak \
+            --env POSTGRES_PASSWORD=keycloak \
+            --env POSTGRES_DB=keycloak \
+            postgres:17.4
+          
+          echo "Starting Keycloak..."
+          docker run --rm --detach \
+            --name keycloak \
+            --net trino \
+            --publish 18080:8080 \
+            --env KC_BOOTSTRAP_ADMIN_USERNAME=admin \
+            --env KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
+            --env KC_DB=postgres \
+            --env KC_DB_URL_HOST=postgres \
+            --env KC_DB_URL_DATABASE=keycloak \
+            --env KC_DB_USERNAME=keycloak \
+            --env KC_DB_PASSWORD=keycloak \
+            --volume "$(pwd)/test-data/test-keycloak-realm.json:/opt/keycloak/data/import/realm.json" \
+            quay.io/keycloak/keycloak:26.1.4 \
+            start-dev --import-realm
+
+          echo "Waiting for Keycloak to be ready..."
+          while true; do
+            if curl -s http://localhost:18080/realms/master | grep -q "realm"; then
+              echo "Keycloak is ready!"
+             break
+           fi
+            echo "Waiting for Keycloak..."
+           sleep 5
+          done
+
+          echo "Starting Trino..."
+          docker run --rm --detach \
+            --name trino \
+            --net trino \
+            --volume "$(pwd)/test-data/test-trino-config.properties:/etc/trino/config.properties" \
+            trinodb/trino:468
+
+          echo "Starting Grafana..."
+          docker run --rm --detach \
+            --name grafana \
+            --net trino \
+            --publish 3000:3000 \
+            --volume "$(pwd):/var/lib/grafana/plugins/trino" \
+            --env "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=trino-datasource" \
+            grafana/grafana:11.4.0
+
+      - name: End to end test
+        run: |
+          npx tsc -p tsconfig.json --noEmit
+          npx playwright install
+          npx playwright test

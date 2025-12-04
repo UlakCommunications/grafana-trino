@@ -30,3 +30,7 @@ e2e-results/
 .idea
 .vscode
 !/trino-datasource.zip
+
+# Playwright
+playwright-report/
+test-results
